@@ -2,51 +2,51 @@
 	<view>
 
 		<layout>
-			<view class="centerCon" style="margin-top: 20px;">
-				<image class='img' src="https://windrunner_max.gitee.io/imgpath/SHST/Static/SHST.jpg">
+			<view class="center-con" style="margin-top: 20px;">
+				<image class="img" src="https://windrunner_max.gitee.io/imgpath/SHST/Static/SHST.jpg">
 				</image>
 			</view>
 
-			<view class='userInfoCon'>
-				<view class='unitInfo' style='border-top: 1px solid #eee;'>
+			<view class="user-info-con">
+				<view class="unit-info" style="border-top: 1px solid #eee;">
 
-					<view style='display:flex;'>
+					<view class="a-flex">
 						<view>版本号</view>
 					</view>
 					<view>{{version}}</view>
 				</view>
 
-				<view class='unitInfo'>
-					<view style='display:flex;'>
+				<view class="unit-info">
+					<view class="a-flex">
 						<view>反馈QQ群</view>
 					</view>
-					<view class='link' data-copy='722942376' @tap='copy'>722942376</view>
+					<view class="link" @tap="copy('722942376')">722942376</view>
 				</view>
 
-				<view class='unitInfo'>
-					<view style='display:flex;'>
+				<view class="unit-info">
+					<view class="a-flex">
 						<view>联系开发者</view>
 					</view>
-					<view class='link' data-copy='651525974' @tap='copy' style='display: flex;'>
+					<view class="link a-flex" @tap="copy('651525974')">
 						<view>651525974</view>
 					</view>
 				</view>
 
-				<view class='unitInfo'>
-					<view style='display:flex;'>
+				<view class="unit-info">
+					<view class="a-flex">
 						<view>项目开源地址</view>
 					</view>
-					<view data-copy='https://github.com/WindrunnerMax/SW' @tap='copy' class='link github'>点我复制链接</view>
+					<view @tap="copy('https://github.com/WindrunnerMax/SHST')" class="link github">点我复制链接</view>
 				</view>
 
 
-				<button class='unitInfo' open-type='share'>
-					<view style='display:flex;'>
+				<button class="unit-info" open-type="share">
+					<view class="a-flex">
 						<view>分享山科小站</view>
 					</view>
 					<view>></view>
 				</button>
-			
+
 
 			</view>
 
@@ -57,29 +57,27 @@
 </template>
 
 <script>
-	const app = getApp()
+	const app = getApp();
 	import layout from "@/components/layout.vue"
 	export default {
 		components: {
 			layout
 		},
-		data() {
+		data: function() {
 			return {
 				version: app.globalData.version
 			}
 		},
 		methods: {
-			copy(e) {
-				wx.setClipboardData({
-					data: e.currentTarget.dataset.copy
-				})
+			copy: function(copy) {
+				wx.setClipboardData({data: copy})
 			}
 		}
 	}
 </script>
 
 <style>
-	.centerCon {
+	.center-con {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -90,12 +88,12 @@
 		height: 109px;
 	}
 
-	.userInfoCon {
+	.user-info-con {
 		margin-top: 20px;
 		padding: 10px;
 	}
 
-	.unitInfo {
+	.unit-info {
 		height: 30px;
 		line-height: 30px;
 		border-bottom: 1px solid #eee;

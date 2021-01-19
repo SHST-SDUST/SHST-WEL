@@ -42,7 +42,7 @@
 				<view style="margin:0 5px;">|</view>
 				<button @tap="toAbout">关于</button>
 			</view>
-			<view class="weui-footer__text">Copyright © 2019 WindrunnerMax</view>
+			<view class="weui-footer__text">Copyright © 2020 WindrunnerMax</view>
 		</view>
 	</view>
 </template>

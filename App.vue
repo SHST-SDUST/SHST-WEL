@@ -2,9 +2,9 @@
 	"use strict";
 	export default {
 		globalData: {
-			version: "2.0.0"
+			version: "2.0.2"
 		},
-		onPageNotFound(res) { 
+		onPageNotFound: function(res) { 
 			wx.reLaunch({url: "pages/home/not-found/not-found"})
 		},
 		onLaunch: () => {
